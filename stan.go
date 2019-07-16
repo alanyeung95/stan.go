@@ -484,11 +484,13 @@ func (sc *conn) pingServer() {
 		return
 	}
 	sc.pingOut++
+	/**
 	if sc.pingOut > sc.pingMaxOut {
 		sc.pingMu.Unlock()
 		sc.closeDueToPing(ErrMaxPings)
 		return
 	}
+	**/
 	sc.pingTimer.Reset(sc.pingInterval)
 	nc := sc.nc
 	sc.pingMu.Unlock()
